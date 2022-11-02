@@ -20,13 +20,7 @@ const Header = () => {
   let display = width < 1200 ? "" : "none";
   let display2 = width > 1200 ? "" : "none";
   let margin = width < 1000 ? "mt-3" : "mt-1";
-  // if (width < 1200) {
-  //   display = "none";
-  // }
-  // let display2 = "none";
-  // if (width < 1200) {
-  //   display2 = "block";
-  // }
+
   const dispatch = useDispatch();
   const handleLogout = () => {
     dispatch(logout());
@@ -45,26 +39,21 @@ const Header = () => {
   return (
     <div className="container ">
       <div className="row ">
-        <div style={{ width: "50%" }}>
+        <div style={{ width: "50%"}}>
           <div onClick={handlelogo} className={margin}>
-            <h1 className="text-white  "> movie</h1>
+            <h1 className={style.logo}> movie</h1>
           </div>
         </div>
         <div style={{ display: display2 }} className="col-sm-6">
           <div className="row">
-            <div className="col-sm-6">
-              <a className={style.stylea}> Home</a>
-              <a className={style.stylea}> Lịch chiếu</a>
-              <a className={style.stylea}> Cụm rạp </a>
-            </div>
             {user ? (
               <div className="col-sm-6 " style={{ display: display2 }}>
                 <div className="row">
-                  <div className="col-sm-6     pe-0">
+                  <div className="col-sm-6 pe-0">
                     <span className="text-white me-1 ">Xin Chào</span>
                     <span className="text-white ">{user.taiKhoan}</span>
                   </div>
-                  <div className="col-sm-6 text-center   ps-0 ">
+                  <div className="col-sm-6 text-center ps-0 ">
                     <button
                       onClick={handleLogout}
                       className="bg-transparent text-white border-0 fs-4"
@@ -149,16 +138,4 @@ const Header = () => {
 };
 
 export default Header;
-{
-  /* <div className="col-sm-6 " style={{display: display2}}>
-                <div className="row">
-                  <div className="col-sm-6 mt-3 text-end   pe-0">
-                    <h3 className="text-white">Xin Chào</h3>
-                    
-                  </div>
-                  <div className="col-sm-6 text-center   ps-0 ">
-                  <button onClick={handleLogout} className="bg-transparent text-white border-0 fs-3">Logout</button>
-                  </div>
-                </div>
-        </div> */
-}
+

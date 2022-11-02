@@ -1,6 +1,6 @@
 .container {
   background-color: #ccffff;
-  height: 200vh;
+  height: 100vh;
 }
 .square {
   width: 40px;
@@ -100,7 +100,7 @@
 }
 @media all and (max-width: 1500px) {
   .container {
-    height: 200vh;
+    height: 170vh;
     padding-bottom: 20px;
   }
   .row {
@@ -115,7 +115,7 @@
 }
 @media all and (max-width: 1200px) {
   .container {
-    height: 200vh;
+    height: 170vh;
     padding-bottom: 20px;
   }
   .row {

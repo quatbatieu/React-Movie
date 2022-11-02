@@ -5,6 +5,7 @@ import MainLayout from "components/MainLayout";
 import AuthLayout from "components/AuthLayout";
 import CheckoutRoute from "routes/CheckoutRoute";
 import AdminRoute from "routes/AdminRoute";
+import Loading from "./routes/Loading";
 
 // Để chỉ cần tải những pages cần thiết ta sử dụng kĩ thuật lazyload
 const Home = lazy(() => import("modules/Home/pages/Home"));
@@ -14,7 +15,6 @@ const Register = lazy(() => import("modules/Authentication/pages/Register"));
 
 const MovieList = lazy(() => import("modules/AdminMovie/pages/MovieList"));
 const AddMovie = lazy(() => import("modules/AdminMovie/pages/AddMovie"));
-// const AddMovie = lazy(() => import("modules/AdminMovie/pages/AddMovie"));
 const UpdateMovie = lazy(() => import("modules/AdminMovie/pages/UpdateMovie"));
 const Times = lazy(() => import("modules/AdminMovie/pages/Times"));
 const UpdateUser = lazy(() => import("modules/AdminMovie/pages/UpdateUser"));
@@ -24,7 +24,7 @@ const Ticket = lazy(() => import("modules/Ticket/Pages/Ticket"));
 function App() {
   return (
     // Suspense: hiển thị fallback UI (Loading) khi các file JS của một page đang được tải về
-    <Suspense>
+    <Suspense fallback={<Loading />}>
       <Routes>
         <Route path="/" element={<AdminRoute />}>
           <Route path="admin/">
